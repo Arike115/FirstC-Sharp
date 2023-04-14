@@ -10,7 +10,7 @@ namespace FirstC_Sharp.Operators
     {
         public static void Mutiply()
         {
-            Teacher.MyMethod3(5,90);
+            
         }
     }
 }

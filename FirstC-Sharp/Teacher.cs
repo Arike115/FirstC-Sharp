@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 
 namespace FirstC_Sharp
 {
-    public static class Teacher
+    //non static or instance class/method
+    public class Teacher
     {
-        public static void AddTeacher()
+        //fields
+        float _Pi = 3.141f;
+        int _Radius;
+
+        //construtor
+        public Teacher(int Radius)
         {
-            int v = 10;
-            int y = 12;
-            int x = v * y;
-            Console.WriteLine(x);
+            this._Radius = Radius;
         }
-        public static void MyMethod3(int t, int k)
+
+        //method
+        public float calculator()
         {
-            //t = 10;
-            //k = 7;
-            int d = t * k;
-            Console.WriteLine(d);
+            return _Pi * _Radius * _Radius;
         }
+      
     }
 }

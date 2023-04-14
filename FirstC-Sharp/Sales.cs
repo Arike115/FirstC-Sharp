@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace FirstC_Sharp
 {
-    internal class Sales
+    //static class/method
+    public static class Sales
     {
+        static float _Pi = 3.141f;
+        static int _Radius;
+
+        //construtor
+        // static Teacher (int Radius)
+        //{
+        //    _Radius = Radius;
+        //}
+
+        //method
+        public static float calculator(int Radius)
+        {
+            _Radius = Radius;
+            return _Pi * _Radius * _Radius;
+        }
     }
 }
