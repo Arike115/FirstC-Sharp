@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace FirstC_Sharp.Employee
 {
-    public class EmployeeData
+    public enum Gender
     {
-
+        Unknown,
+        Male,
+        Female,
+        
     }
-    public class Information
-    {
-
-    }
-
 
 }
