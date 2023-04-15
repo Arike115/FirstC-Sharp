@@ -1,30 +1,32 @@
-﻿
-
-using FirstC_Sharp;
-using FirstC_Sharp.Operators;
+﻿using FirstC_Sharp.Employee;
 using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
-    //constructor
+    //inheritance
     
     static void Main(string[] args) //private method
     {
-        //calling static class
-        //float Area1 = Sales.calculator(5);
-        //Console.WriteLine("Area = {0}", Area1);
+        FullTimeEmployee fe = new FullTimeEmployee();
+        fe.FirstName = "Walure";
+        fe.LastName = "Capital";
+        fe.YearlySalary = 500000;
+        fe.PrintInfo();
+        fe.PrintSalary();
 
+        ShortTimeEmployee se = new ShortTimeEmployee();
+        se.FirstName = "Ben";
+        se.LastName = "Tom";
+        se.HourlySalary = 5000;
+        se.PrintInfo();
+        se.PrintSalary();
 
-        //calling a non-static class
-        //instatiation
-        Teacher t1 = new Teacher();
-        float area = t1.calculator(8);
-        Console.WriteLine("Area = {0}", area);
-        t1.PrintResult();
-
+        EmployeeData ed = new EmployeeData();
+        ed.FirstName = "Joy";
+        ed.LastName = "Biden";
+        ed.PrintInfo();
     }
 
 
 
 }
-//end of a statement
