@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace FirstC_Sharp.Employee
 {
-    public class EmployeeData
+    public class EmployeeData 
     {
         public string FirstName;
         public string LastName;
         public string Age;
 
+        public EmployeeData() 
+        {
+        }
         public void PrintInfo()
         {
             Console.WriteLine( FirstName + " " + LastName);
