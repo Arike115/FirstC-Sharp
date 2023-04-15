@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FirstC_Sharp.Operators
 {
-    public static class Ariths
+    public class Ariths : Teacher
     {
-        public static void Mutiply()
+        public  void Mutiply()
         {
             
         }

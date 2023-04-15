@@ -6,24 +6,13 @@ using System.Threading.Tasks;
 
 namespace FirstC_Sharp
 {
-    //non static or instance class/method
-    public class Teacher
+   //inheritance
+   //Derived class
+    public class Teacher : Sales //BaseClass
     {
-        //fields
-        float _Pi = 3.141f;
-        int _Radius;
-
-        //construtor
-        public Teacher(int Radius)
+      public void PrintResult()
         {
-            this._Radius = Radius;
+            Console.WriteLine("welcome to inheritance class");
         }
-
-        //method
-        public float calculator()
-        {
-            return _Pi * _Radius * _Radius;
-        }
-      
     }
 }

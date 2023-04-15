@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace FirstC_Sharp
 {
     //static class/method
-    public static class Sales
+    public class Sales
     {
-        static float _Pi = 3.141f;
-        static int _Radius;
+         float _Pi = 3.141f;
+         int _Radius;
 
         //construtor
         // static Teacher (int Radius)
@@ -19,7 +19,7 @@ namespace FirstC_Sharp
         //}
 
         //method
-        public static float calculator(int Radius)
+        public  float calculator(int Radius)
         {
             _Radius = Radius;
             return _Pi * _Radius * _Radius;

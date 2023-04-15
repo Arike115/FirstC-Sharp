@@ -17,9 +17,10 @@ class Program
 
         //calling a non-static class
         //instatiation
-        Teacher t1 = new Teacher(8);
-        float Area = t1.calculator();
-        Console.WriteLine("Area = {0}", Area);
+        Teacher t1 = new Teacher();
+        float area = t1.calculator(8);
+        Console.WriteLine("Area = {0}", area);
+        t1.PrintResult();
 
     }
 
