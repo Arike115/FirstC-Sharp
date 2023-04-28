@@ -1,18 +1,29 @@
-﻿using FirstC_Sharp.Employee;
+﻿
+using FirstC_Sharp;
 using System.Security.Cryptography.X509Certificates;
 
 
-class Program : EmployeeData
+class Program
 {
-    //Enum
+    //Generics
     
     static void Main(string[] args) //private method
     {
-        string name = "joy";
-        int age = 34;
-        int id = 101;
-        Console.WriteLine(" your name ={0} my age is = {1} id = {2}", name, age, id);
+        bool equal = Staff<string>.AreEqual("JOY", "LOVE");
+        bool checkequal = Staff<decimal>.AreEqual(1.2m,2.8m);
+        bool doubleequal = Staff<int>.AreEqual(67, 78);
+       
+        if(equal)
+        {
+            Console.WriteLine("equal");
+        }
+        else
+        {
+            Console.WriteLine("not equal");
+        }
     }
+
+  
 
 
 
