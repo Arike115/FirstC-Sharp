@@ -6,13 +6,22 @@ using System.Threading.Tasks;
 
 namespace FirstC_Sharp.Employee
 {
-    public class EmployeeData
+    public class EmployeeData : Student, ICustomer
     {
+        public void myinfo()
+        {
 
-    }
-    public class Information
-    {
+        }
 
+        public void mymethod()
+        {
+           
+        }
+
+        public void mymethod(int id)
+        {
+            
+        }
     }
 
 

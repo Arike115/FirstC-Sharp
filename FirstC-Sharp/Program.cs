@@ -2,52 +2,21 @@
 using System.Security.Cryptography.X509Certificates;
 
 
-class Program
+class Program : EmployeeData
 {
     //Enum
     
     static void Main(string[] args) //private method
     {
-       
-        Data[] dta = new Data[4];
-
-        dta[0] = new Data
-        {
-            Name = "Joy",
-            Gender = Gender.Male
-        };
-
-        dta[1] = new Data
-        {
-            Name = "Ben",
-            Gender = Gender.Male
-        };
-
-        dta[2] = new Data
-        {
-            Name = "Tod",
-            Gender = Gender.Female
-        };
-
-        dta[3] = new Data
-        {
-            Name = "Jude",
-            Gender = Gender.Unknown
-        };
-
-        foreach( Data dt in dta)
-        {
-            Console.WriteLine("Name = {0} && Gender = {1}", dt.Name, dt.Gender);
-        }
+        string name = "joy";
+        int age = 34;
+        int id = 101;
+        Console.WriteLine(" your name ={0} my age is = {1} id = {2}", name, age, id);
     }
 
 
 
 }
 
-public class Data
-{
-    // properties
-    public string Name { get; set; }
-    public Gender Gender { get; set; }
-}
+
+
