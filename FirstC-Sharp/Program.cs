@@ -3,25 +3,55 @@ using FirstC_Sharp;
 using System.Security.Cryptography.X509Certificates;
 
 
+
 class Program
 {
-    //Generics
+    //Lamda Expression
     
     static void Main(string[] args) //private method
     {
-        bool equal = Staff<string>.AreEqual("JOY", "LOVE");
-        bool checkequal = Staff<decimal>.AreEqual(1.2m,2.8m);
-        bool doubleequal = Staff<int>.AreEqual(67, 78);
-       
-        if(equal)
+        Logic.AddNum(5);
+        Numberchanger nc;
+        Numberchanger nc1 = new Numberchanger(Logic.AddNum);
+        Numberchanger nc2 = new Numberchanger(Logic.MulNum);
+
+        nc = nc1;
+        nc(5);
+
+        List<Staff> emplist = new List<Staff>();
+        emplist.Add(new Staff() { Id = 101, Name = "joy", Salary = 50000, Experience = 3 });
+        emplist.Add(new Staff() { Id = 102, Name = "Ben", Salary = 90000, Experience = 5 });
+        emplist.Add(new Staff() { Id = 103, Name = "Ruth", Salary = 60000, Experience = 5 });
+        emplist.Add(new Staff() { Id = 104, Name = "Tolu", Salary = 80000, Experience = 3 });
+        emplist.Add(new Staff() { Id = 105, Name = "Todd", Salary = 100000, Experience = 6 });
+
+       var result = emplist.Select(em => em.Name).ToList();
+        foreach(var item in result)
         {
-            Console.WriteLine("equal");
+            Console.WriteLine(item);
+        }
+
+        var Total = emplist.Sum(em => em.Salary);
+        Console.WriteLine(Total);
+
+
+
+
+    }
+
+    public static bool indicate(Staff staff)
+    {
+        if(staff.Salary >= 50000)
+        {
+           return true;
         }
         else
         {
-            Console.WriteLine("not equal");
+            return false;
         }
     }
+
+   
 
   
 
