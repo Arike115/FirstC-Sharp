@@ -23,6 +23,11 @@ class Program
         //Console.WriteLine(instance.Age);
         //Console.WriteLine(instance.Grade);
 
+        int? v = null;
+        decimal? t = null;
+        float? f = null;
+        DateTime? d = null;
+
         int? g = null;
 
         int Ticket;
