@@ -6,96 +6,39 @@ using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
-    //Anonymous Method
-    //Nullable types
+    //Extension  method
     
     static void Main(string[] args) //private method
     {
-        //var instance = new
-        //{
-        //    FirstName = "jamie",
-        //    LastName = "King",
-        //    Age = 12,
-        //    Grade = "1st",
-        //};
-        //Console.WriteLine(instance.FirstName);
-        //Console.WriteLine(instance.LastName);
-        //Console.WriteLine(instance.Age);
-        //Console.WriteLine(instance.Grade);
 
-        int? v = null;
-        decimal? t = null;
-        float? f = null;
-        DateTime? d = null;
+        string FirstName = "ben";
+        var result = FirstName.ChangeFirstLetter();
+        Console.WriteLine(result);
 
-        int? g = null;
+        string LastName = "adele";
+        var results = LastName.ChangeFirstLetter();
+        Console.WriteLine(results);
 
-        int Ticket;
 
-        if(g == null)
+        List<int> numbers = new List<int> { 1,2,3,4,5,6,7,8,9,10};
+        var evenNumbers = Enumerable.Where(numbers, n => n % 2 != 0);
+
+        foreach(int n in evenNumbers)
         {
-            Ticket= 0;
+            Console.WriteLine(n);
         }
-        else
-        {
-            Ticket = (int)g;
-        }
-        Console.WriteLine("Tickets = {0}",Ticket);
-        //? null coalesing
-
-       
-
-
-
-
-
-
-
-
-        // Logic.AddNum(5);
-        // Numberchanger nc;
-        // Numberchanger nc1 = new Numberchanger(Logic.AddNum);
-        // Numberchanger nc2 = new Numberchanger(Logic.MulNum);
-
-        // nc = nc1;
-        // nc(5);
-
-        // List<Staff> emplist = new List<Staff>();
-        // emplist.Add(new Staff() { Id = 101, Name = "joy", Salary = 50000, Experience = 3 });
-        // emplist.Add(new Staff() { Id = 102, Name = "Ben", Salary = 90000, Experience = 5 });
-        // emplist.Add(new Staff() { Id = 103, Name = "Ruth", Salary = 60000, Experience = 5 });
-        // emplist.Add(new Staff() { Id = 104, Name = "Tolu", Salary = 80000, Experience = 3 });
-        // emplist.Add(new Staff() { Id = 105, Name = "Todd", Salary = 100000, Experience = 6 });
-
-        //var result = emplist.Select(em => em.Name).ToList();
-        // foreach(var item in result)
-        // {
-        //     Console.WriteLine(item);
-        // }
-
-        // var Total = emplist.Sum(em => em.Salary);
-        // Console.WriteLine(Total);
+        
 
 
 
 
     }
 
-    public static bool indicate(Staff staff)
-    {
-        if(staff.Salary >= 50000)
-        {
-           return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 
-   
 
-  
+
+
+
 
 
 
