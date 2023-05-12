@@ -6,27 +6,40 @@ using System.Threading.Tasks;
 
 namespace FirstC_Sharp
 {
-    delegate int Numberchanger(int n);
-   public class Logic
+    /// <summary>
+    /// this class is all about calculations
+    /// it contains two methods with different parameters.
+    /// </summary>
+    
+    public class Logic
     {
-       public static int num = 10;//field
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="FirstValue"></param>
+        /// <param name="SecondValue"></param>
+        /// <returns></returns>
 
-        public static int AddNum(int p)
+        [Obsolete("use AddNum method that has 3 parameter value")]
+        public static int AddNum(int FirstValue, int SecondValue)
         {
-            num += p;
-            return num;
+            return FirstValue + SecondValue;
         }
 
-        public static int SubNum(int p)
+        #region to be reconstruct later
+
+        /// <summary>
+        /// AddNum method sum data together
+        /// </summary>
+        /// <param name="FirstValue"></param>
+        /// <param name="SecondValue"></param>
+        /// <param name="ThirdValue"></param>
+        /// <returns>returns and interger value</returns>
+        public static int AddNum(int FirstValue, int SecondValue, int ThirdValue)
         {
-            num -= p;
-            return num;
-        } 
-        public static int MulNum(int p)
-        {
-            num *= p;
-            return num;
+            return FirstValue + SecondValue + ThirdValue;
         }
+        #endregion
+
     }
 }
