@@ -7,112 +7,59 @@ using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
-  //stack (last in first out) bottom to the top
-  //queue (first in first out) top to bottom
-  //dictionary
+ //Linq
+ //method syntax or fluent syntax
+ //query syntax
+ //Filtering === where
+ //Projection === select, slect many
+ //ordering === orderby, thenby, 
+ //Grouping == group by
     static void Main(string[] args) //private method
     {
-        #region stack and queue
-        List<string> list = new List<string>();
-        list.Add("pencil");
+        IList<Student> studentlist = new List<Student>()
+        {
+            new Student(){Id = 2, Name = "John", SchoolLevy =  60000},
+            new Student(){Id = 2, Name = "Ben", SchoolLevy =  55000},
+            new Student(){Id = 4, Name = "Ruth", SchoolLevy =  23000},
+            new Student(){Id = 4, Name = "Parm", SchoolLevy =  56400},
+            new Student(){Id = 6, Name = "Sam", SchoolLevy =  33000},
+            new Student(){Id = 6, Name = "Judge", SchoolLevy =  42000},
+            new Student(){Id = 6, Name = "Shola", SchoolLevy =  12000},
+        };
+        
+        //filtering
+        var student = studentlist.Where((s,i) =>
+        {
+            if (i % 2 == 0)
+                return true;
+            return false;
+        });
 
-        Stack<string> stack = new Stack<string>();
-        stack.Push("A");
-        stack.Push("B"); 
-        stack.Push("C"); 
-        stack.Push("D");
-        Console.WriteLine(stack.Peek());
-        stack.Pop();
-        Console.WriteLine(stack.Peek());
-        stack.Pop();
-        Console.WriteLine(stack.Peek());
-        stack.Pop();
-        Console.WriteLine(stack.Peek());
+        //projection
+        var selectstudent = studentlist.Select(s => new { s.Name, s.Id }).ToList();
 
-        Console.WriteLine("----------------------");
+        //Ordering
+        var orderstudent = studentlist.OrderBy(x => x.Name).ThenBy(x => x.Id);
 
-        Queue<int> queue= new Queue<int>();
-        queue.Enqueue(1);
-        queue.Enqueue(2);
-        queue.Enqueue(3);
-        queue.Enqueue(4);
-
-        Console.WriteLine(queue.Peek());
-        queue.Dequeue();
-        Console.WriteLine(queue.Peek());
-        queue.Dequeue();
-        Console.WriteLine(queue.Peek());
-        queue.Dequeue();
-        Console.WriteLine(queue.Peek());
+        //GroupBY
+        var groupstudent = studentlist.GroupBy(b => b.Id).Select(g => new 
+        {
+            StudentId = g.Key,
+            StudentCount = g.Count()
+        });
 
 
+        //query syntax
+        #region
+        var students  = from s in studentlist
+                        where s.Id > 2
+                        select s;
         #endregion
 
-        Student stud1 = new Student()
+        foreach (var std in groupstudent)
         {
-            Id= 101,
-            Name = "Grace",
-            SchoolLevy = 50000, 
-        };
-
-        Student stud2 = new Student()
-        {
-            Id = 102,
-            Name = "Tom",
-            SchoolLevy = 55000,
-        };
-
-        Student stud3 = new Student()
-        {
-            Id = 103,
-            Name = "Shola",
-            SchoolLevy = 60000,
-        };
-
-        Student stud4 = new Student()
-        {
-            Id = 104,
-            Name = "Joy",
-            SchoolLevy = 72000,
-        };
-
-
-        
-        Dictionary<string, string> example = new Dictionary<string, string>();
-        example.Add("Nigeria", "A Giant of Africow, with plenty mineral resources");
-        example.Add("Food", "A food is what we eat to fill in our energy");
-        example.Add("Walure Capital", "Walure Capital is An Academic/Outsourcing firm that give opportunities to youths");
-        example.Add("Tom Cruise", "Tom Crusie is an American actor with value");
-
-        foreach (var result in example)
-        {
-            Console.WriteLine("-------------");
-            Console.WriteLine("Word - {0}", result.Key);
-            Console.WriteLine("-------------");
-            Console.WriteLine("Description = {0}",result.Value);
+            Console.WriteLine($"{std.StudentId} -- {std.StudentCount}");    
         }
-
-
-
-
-
-
-
-
-        //Dictionary<int,Student> ValuePairs= new Dictionary<int,Student>();
-        //ValuePairs.Add(stud1.Id, stud1);
-        //ValuePairs.Add(stud2.Id, stud2);
-        //ValuePairs.Add(stud3.Id, stud3);
-        //ValuePairs.Add (stud4.Id, stud4);
-
-        //foreach(var result in ValuePairs) 
-        //{
-        //    Console.WriteLine("Id - {0}", result.Key);
-        //    Student student = result.Value;
-        //    Console.WriteLine("Name = {0}, SchoolFee = {1}", 
-        //       student.Name, student.SchoolLevy);
-        //}
-
     }
 
 }
