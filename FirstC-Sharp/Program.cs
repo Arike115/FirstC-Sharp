@@ -7,12 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
- //Linq
- //set operators
- //element operators
- //Agregate operators
- //Join Operators
- //Quantifiers
+
     static void Main(string[] args) //private method
     {
         IList<Student> studentlist = new List<Student>()
